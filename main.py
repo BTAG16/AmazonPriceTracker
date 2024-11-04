@@ -9,15 +9,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 amazon_headers = {
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-    "Accept-Encoding": "gzip, deflate, br, zstd",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Priority": "u=0, i",
-    "Upgrade-Insecure-Requests": "1",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    get the User-Agent by pasting [https://httpbin.org/headers] in your browser
 }
 
-amazon_URL = "https://www.amazon.com/Leather-Platform-Loafers-Classic-Business/dp/B0CP898J2X/ref=sr_1_1?crid=3GSIG5K1B5OTF&dib=eyJ2IjoiMSJ9.8TcvggvgyCN4vQNTy4ctyigDH7xRoBn33THsTH63iyKNQKZ8k7ok_pZIFgzQLZXjZPHx2P2fG-7NysxLAJ-rAYzniakseezPMYy-NU2S_886r1-HT6sFj9v1bQfd3Y3ej7E-PBtVY_-iq3EwFkQ6CLMfQj4mT1x1A0mTM01ieiKpMrYsJWRKk_sRh_dP2RLhwrkzlX_9HnJZf9MIa9W-ScLJxGznDQ8wXSBWRj5T_qgRauTBe_Jt6Q0RGrmhoXq6ZMD5erUu0wY_t3TDQqgAb3AyLXopGe7EmN8i6JAV86Y.AptsaP6J0Fpv-fD77BhMdYnJa-NpRzrA0QUCCvCtdtk&dib_tag=se&keywords=chunky%2Bloafers%2Bfor%2Bmen&psr=EY17&qid=1730710791&s=todays-deals&sprefix=chunky%2Bloafers%2Ctodays-deals%2C169&sr=1-1-catcorr&th=1"
+amazon_URL = "{Get a Product of your choice from the Amazon website.}"
 
 def price_tracker():
     response = requests.get(amazon_URL, headers=amazon_headers)
@@ -50,3 +45,4 @@ def price_tracker():
 
 while True:
     price_tracker()
+    time.sleep(1800)
